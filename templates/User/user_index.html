@@ -1,0 +1,359 @@
+{% extends "index.html" %}
+<div>
+  {% block nav %}
+  <nav class="navbar fixed-top">
+    <div
+      class="container sm:px-4 lg:px-8 flex flex-wrap items-center justify-between lg:flex-nowrap"
+    >
+      <!-- Text Logo - Use this if you don't have a graphic logo -->
+      <!-- <a class="text-gray-800 font-semibold text-3xl leading-4 no-underline page-scroll" href="index.html">Pavo</a> -->
+
+      <!-- Image Logo -->
+      <a
+        class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline"
+        href="index.html"
+      >
+        <img src="images/logo.svg" alt="alternative" class="h-8" />
+      </a>
+
+      <button
+        class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400"
+        type="button"
+        data-toggle="offcanvas"
+      >
+        <span
+          class="navbar-toggler-icon inline-block w-8 h-8 align-middle"
+        ></span>
+      </button>
+
+      <div
+        class="navbar-collapse offcanvas-collapse lg:flex lg:flex-grow lg:items-center"
+        id="navbarsExampleDefault"
+      >
+        <ul
+          class="pl-0 mt-3 mb-2 ml-auto flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row"
+        >
+          <li>
+            <a
+              class="nav-link page-scroll active"
+              href="{{ url_for('index.Home2') }}"
+              >Home <span class="sr-only">(current)</span></a
+            >
+          </li>
+          <li>
+            <a class="nav-link page-scroll" href="{{ url_for('index.Home2') }}"
+              >Features</a
+            >
+          </li>
+          <li>
+            <a class="nav-link page-scroll" href="{{ url_for('index.Home2') }}"
+              >Details</a
+            >
+          </li>
+          <li>
+            <a class="nav-link page-scroll" href="{{ url_for('index.Home2') }}"
+              >Pricing</a
+            >
+          </li>
+          <li class="dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="dropdown01"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+              >Drop</a
+            >
+            <div class="dropdown-menu" aria-labelledby="dropdown01">
+              <a
+                class="dropdown-item page-scroll"
+                href="{{ url_for('user.user_index') }}"
+                >User Data</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item page-scroll" href="terms.html"
+                >Terms Conditions</a
+              >
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item page-scroll" href="privacy.html"
+                >Privacy Policy</a
+              >
+            </div>
+          </li>
+          <li>
+            {% if allowed == "Login" %}
+            <a class="nav-link page-scroll" href="{{ url_for('index.login') }}"
+              >{{allowed}}</a
+            >
+            {% else %}
+            <a
+              class="nav-link page-scroll"
+              href="{{ url_for('index.user_logout') }}"
+              >{{allowed}}</a
+            >
+            {% endif %}
+          </li>
+        </ul>
+      </div>
+      <!-- end of navbar-collapse -->
+    </div>
+    <!-- end of container -->
+  </nav>
+  {% endblock %} {% block content %}
+  <div class="bg-blue-50">
+    <div class="mt-0" id="bt1">
+      <div style="padding-top: 90px">
+        <div class="flex flex-col space-x-2 justify-center items-center">
+          <div>
+            <button
+              onclick="add_vehicle()"
+              type="button"
+              class="mt-20 inline-block px-6 w-80 py-2.5 h-20 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
+            >
+              Add Vehicle
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="" id="data">
+      <div class="mt-20 mb-10 md:px-20">
+        <div class="flex flex-col space-x-2 justify-center items-center">
+          <div>
+            <img
+              src="{{url_for('static',filename='img/add-friend.png')}}"
+              alt=""
+              width=" 200px"
+            />
+          </div>
+        </div>
+        <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
+          <table
+            class="w-full text-sm text-left text-gray-500 dark:text-gray-400"
+          >
+            <thead
+              class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400"
+            >
+              <tr>
+                <th scope="col" class="py-3 px-6">Vehicle Name</th>
+                <th scope="col" class="py-3 px-6">Vehicle Number</th>
+                <th scope="col" class="py-3 px-6">Email</th>
+                <th scope="col" class="py-3 px-6">Verified</th>
+                <th scope="col" class="py-3 px-6">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for entry in data %}
+              <tr
+                class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
+              >
+                <th
+                  scope="row"
+                  class="py-4 px-6 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+                >
+                  {{entry.vehicle_name}}
+                </th>
+                <td class="py-4 px-6">{{entry.vehicle_no}}</td>
+                <td class="py-4 px-6">{{entry.email}}</td>
+                <td class="py-4 px-6">
+                  {% if entry.iot_id %}
+                  <img
+                    class="w-5 h-5"
+                    src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Green_tick.svg/1200px-Green_tick.svg.png"
+                    alt=""
+                  />
+
+                  {% else %}
+                  <img
+                    class="w-5 h-5"
+                    src="https://cdn.pixabay.com/photo/2012/04/12/13/15/red-29985_1280.png"
+                    alt=""
+                  />
+                  {% endif %}
+                </td>
+                <td class="py-4 px-6">
+                  <a
+                    href="#"
+                    class="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    >Edit</a
+                  >
+                </td>
+              </tr>
+              {% endfor%}
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <div class="hidden" id="add_vehicle">
+      <form method="post" action="/vehicle" enctype="multipart/form-data">
+        <div class="grid gap-6 mb-6 md:grid-cols-2">
+          <div>
+            <label
+              for="first_name"
+              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              >First name</label
+            >
+            <input
+              name="first_name"
+              type="text"
+              id="first_name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="John"
+              required=""
+            />
+          </div>
+          <div>
+            <label
+              for="last_name"
+              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              >Last name</label
+            >
+            <input
+              name="last_name"
+              type="text"
+              id="last_name"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Doe"
+              required=""
+            />
+          </div>
+          <div>
+            <label
+              for="company"
+              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              >Vehicle Name</label
+            >
+            <input
+              name="vehicle_name"
+              type="text"
+              id="company"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="Swift"
+              required=""
+            />
+          </div>
+          <div>
+            <label
+              for="phone"
+              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              >Phone number</label
+            >
+            <input
+              name="mobile_no"
+              type="number"
+              id="phone"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="7020880419"
+              pattern="7020880419"
+              required=""
+            />
+          </div>
+          <div>
+            <label
+              for="website"
+              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              >Vehicle Number</label
+            >
+            <input
+              name="vehicle_no"
+              type="text"
+              id="website"
+              class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+              placeholder="MHBH4215"
+              required=""
+            />
+          </div>
+        </div>
+        <div class="mb-6">
+          <label
+            for="address"
+            class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+            >Address</label
+          >
+          <input
+            name="address"
+            type="text"
+            id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="john.doe@gmail.com"
+            required=""
+          />
+        </div>
+        <div class="mb-6">
+          <input
+            name="file"
+            type="file"
+            id="email"
+            class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+            placeholder="Car Photo"
+            required=""
+          />
+        </div>
+
+        <div class="flex items-start mb-6">
+          <div class="flex items-center h-5">
+            <input
+              id="remember"
+              type="checkbox"
+              value=""
+              class="w-4 h-4 bg-gray-50 rounded border border-gray-300 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+              required=""
+            />
+          </div>
+          <label
+            for="remember"
+            class="ml-2 text-sm font-medium text-white dark:text-gray-400"
+            >I agree with the
+            <a href="#" class="text-blue-600 hover:underline dark:text-blue-500"
+              >terms and conditions</a
+            >.</label
+          >
+        </div>
+        <div class="flex gap-5">
+          <button
+            type="submit"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+          >
+            Submit
+          </button>
+          <button
+            type="submit"
+            onclick="not_add_vehicle()"
+            class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-blue-800"
+          >
+            Cancel
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const add_vehicle = () => {
+      console.log(
+        (document.getElementById("add_vehicle").className =
+          "grid justify-items-center  my-20")
+      );
+      console.log((document.getElementById("bt1").className = " hidden"));
+      console.log((document.getElementById("data").className = " hidden"));
+    };
+
+    const not_add_vehicle = () => {
+      console.log(
+        (document.getElementById("add_vehicle").className = "hidden")
+      );
+      console.log((document.getElementById("bt1").className = ""));
+      console.log((document.getElementById("data").className = ""));
+    };
+    const ok = (x) => {
+      if (document.getElementById("mob_nav").className == "hidden") {
+        document.getElementById("mob_nav").className = "p-5 md:hidden";
+      } else {
+        document.getElementById("mob_nav").className = "hidden";
+      }
+    };
+  </script>
+  {% endblock %}
+</div>

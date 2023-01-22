@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Accident Login</title>
+      <link
+        rel="stylesheet"
+        href="{{url_for('static',filename='dist/TailwindCss/output.css')}}"
+      />
+    </head>
+  </head>
+  <body style="background: #edf2f7">
+    <div class="bg-grey-lighter min-h-screen flex flex-col">
+      <div
+        class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2"
+      >
+        <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
+          <h1
+            class="mb-8 text-3xl text-center font-semibold"
+            ,
+            style="font-size: 45px"
+          >
+            Login
+          </h1>
+          <form action="/login" method="POST">
+            <input
+              type="email"
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="email"
+              placeholder="Email"
+              required
+            />
+
+            <input
+              type="password"
+              class="block border border-grey-light w-full p-3 rounded mb-4"
+              name="password"
+              placeholder="Password"
+              required
+            />
+
+            <button
+              type="submit"
+              class="w-full text-center py-3 rounded bg-green-500 text-white hover:bg-green-600 focus:outline-none my-1"
+            >
+              Login
+            </button>
+          </form>
+        </div>
+
+        <div class="text-grey-dark mt-6">
+          Don't have an account?
+          <a
+            class="no-underline border-b border-blue text-blue-400"
+            href="/sign_up"
+          >
+            Sign up</a
+          >.
+          <h4 class="text-red-500 font-semibold">{{error}}</h4>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
