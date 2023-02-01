@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iot Project</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/Tailwindcss/output.css')}}"
+    />
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  </head>
+  <body class="w-full bg-gray-100">
+    {% block content %}
+    <div class="md:flex">
+      <div class="md:hidden" id="nav_img">
+        <div class="w-full flex p-5">
+          <img
+            onclick="nav_img()"
+            class="w-10 mt-2 hover:cursor-pointer"
+            src="
+          https://friconix.com/png/fi-xwluxx-three-bars-wide.png"
+            alt=""
+          />
+        </div>
+      </div>
+      {% block nav %}
+      <div class="hidden md:block" id="nav_bar">
+        <nav class="fixed md:block bg-gray-50 h-full">
+          <div
+            class="items-center justify-center text-4xl p-5 font-bold whitespace-nowrap hover:no-underline focus:no-underline"
+          >
+            <h1 class="text-red-500">
+              Ta<span class="text-blue-500">arit</span>
+            </h1>
+          </div>
+          <div>
+            <aside class="w-64 h-full" aria-label="Sidebar">
+              <div
+                class="px-3 py-4 overflow-y-auto rounded bg-gray-50 dark:bg-gray-800"
+              >
+                <ul class="space-y-2">
+                  <li>
+                    <a
+                      href="{{ url_for('admin.admin_index') }}"
+                      class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path d="M2 10a8 8 0 018-8v8h8a8 8 0 11-16 0z"></path>
+                        <path
+                          d="M12 2.252A8.014 8.014 0 0117.748 8H12V2.252z"
+                        ></path>
+                      </svg>
+                      <span class="ml-3">Dashboard</span>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a
+                      href="{{ url_for('admin.user_accident') }}"
+                      class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M8.707 7.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l2-2a1 1 0 00-1.414-1.414L11 7.586V3a1 1 0 10-2 0v4.586l-.293-.293z"
+                        ></path>
+                        <path
+                          d="M3 5a2 2 0 012-2h1a1 1 0 010 2H5v7h2l1 2h4l1-2h2V5h-1a1 1 0 110-2h1a2 2 0 012 2v10a2 2 0 01-2 2H5a2 2 0 01-2-2V5z"
+                        ></path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Inbox</span>
+                      <span
+                        id="accident"
+                        class="inline-flex items-center justify-center w-3 h-3 p-3 ml-3 text-sm font-medium bg-blue-100 text-blue-800 rounded-full dark:bg-blue-900 dark:text-blue-300"
+                        >0</span
+                      >
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="{{ url_for('admin.admin_user_data') }}"
+                      class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 9a3 3 0 100-6 3 3 0 000 6zm-7 9a7 7 0 1114 0H3z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Users</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="{{ url_for('admin.admin_data') }}"
+                      class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M10 2a4 4 0 00-4 4v1H5a1 1 0 00-.994.89l-1 9A1 1 0 004 18h12a1 1 0 00.994-1.11l-1-9A1 1 0 0015 7h-1V6a4 4 0 00-4-4zm2 5V6a2 2 0 10-4 0v1h4zm-6 3a1 1 0 112 0 1 1 0 01-2 0zm7-1a1 1 0 100 2 1 1 0 000-2z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Data</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="{{ url_for('admin.admin_logout') }}"
+                      class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M3 3a1 1 0 00-1 1v12a1 1 0 102 0V4a1 1 0 00-1-1zm10.293 9.293a1 1 0 001.414 1.414l3-3a1 1 0 000-1.414l-3-3a1 1 0 10-1.414 1.414L14.586 9H7a1 1 0 100 2h7.586l-1.293 1.293z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Logout</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a
+                      href="#"
+                      class="flex items-center p-2 text-base font-normal text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700"
+                    >
+                      <svg
+                        aria-hidden="true"
+                        class="flex-shrink-0 w-6 h-6 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
+                        fill="currentColor"
+                        viewBox="0 0 20 20"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fill-rule="evenodd"
+                          d="M5 4a3 3 0 00-3 3v6a3 3 0 003 3h10a3 3 0 003-3V7a3 3 0 00-3-3H5zm-1 9v-1h5v2H5a1 1 0 01-1-1zm7 1h4a1 1 0 001-1v-1h-5v2zm0-4h5V8h-5v2zM9 8H4v2h5V8z"
+                          clip-rule="evenodd"
+                        ></path>
+                      </svg>
+                      <span class="flex-1 ml-3 whitespace-nowrap">Sign Up</span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </aside>
+          </div>
+        </nav>
+      </div>
+      {% endblock %}
+
+      <main class="w-full md:ml-60">
+        <div></div>
+        <div class="w-full p-10">
+          <div class="bg-blue-200 h-max p-5 border rounded-lg">
+            <h1 class="text-2xl font-sans font-bold">
+              Welcome To <span class="text-">{{myloc}}</span> Control Room
+            </h1>
+          </div>
+        </div>
+
+        <div class="" id="overflow-hidden">
+          <div id="graph-card" class="">
+            <div
+              class="bg-white flex gap-40 rounded overflow-hidden shadow-lg m-10"
+            >
+              <div>
+                <div id="  " class="flex md:flex-col">
+                  <div
+                    class="w-full bg-white rounded overflow-hidden shadow-lg m-10"
+                  >
+                    <div class="py-3 px-5 font-bold text-2xl bg-white">
+                      Today acccient
+                    </div>
+                    <div class="px-5 py-4">
+                      <div
+                        class="font-bold text-red-500 text-4xl mb-2"
+                        id="total_accident_count"
+                      ></div>
+                    </div>
+                  </div>
+                  <div
+                    class="w-full bg-white rounded overflow-hidden l shadow-lg m-10"
+                  >
+                    <div class="py-3 px-5 font-bold text-2xl bg-white">
+                      Rescued
+                    </div>
+                    <div class="px-5 py-4">
+                      <div
+                        class="font-bold text-blue-500 text-4xl mb-2"
+                        id="total_accident_count"
+                      >
+                        {{user_rescued}}
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="p-4 bg-gray-50" style="width: 100%; max-width: 800px">
+                <canvas class="p-2" id="today_accident"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          class="grid grid-col-3 md:grid-flow-col justify-center items-center content-center"
+        >
+          <div id="graph-card" class="max-w-md overflow-hidden">
+            <div
+              class="max-w-sm bg-white rounded overflow-hidden shadow-lg m-10"
+            >
+              <div class="py-3 px-5 bg-white">Region wise analysis</div>
+              <div class="px-5 py-4">
+                <div class="font-bold text-3xl mb-2">Mumbai Region</div>
+              </div>
+
+              <div class="p-4 bg-gray-50">
+                <canvas class="p-2" id="chartLine"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div id="graph-card" class="max-w-md overflow-hidden">
+            <div
+              class="max-w-sm bg-white rounded overflow-hidden shadow-lg m-10"
+            >
+              <div class="py-3 px-5 bg-white">States</div>
+              <div class="px-5 py-4">
+                <div class="font-bold text-3xl mb-2">Highest death rates</div>
+              </div>
+
+              <div class="p-4 bg-gray-50">
+                <canvas class="p-2" id="bar3"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <div id="graph-card" class="max-w-md overflow-hidden">
+            <div
+              class="max-w-sm bg-white rounded overflow-hidden shadow-lg m-10"
+            >
+              <div class="py-3 px-5 bg-white">Maharashtra</div>
+              <div class="px-5 py-4">
+                <div class="font-bold text-3xl mb-2">Metropolitian Cities</div>
+              </div>
+
+              <div class="p-4 bg-gray-50">
+                <canvas class="p-2" id="chartPie"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Chart line -->
+    <script>
+      const data = {
+        labels: [
+          "Suburban",
+          "Kalyan",
+          "Thane",
+          "Navi Mumbai",
+          "Panvel",
+          "Palghar",
+          "Greater Mumbai",
+        ],
+        datasets: [
+          {
+            label: "Mumbai",
+            data: [65, 59, 90, 81, 56, 55, 40],
+            fill: true,
+            backgroundColor: "rgba(133, 105, 241, 0.2)",
+            borderColor: "rgb(255, 99, 132)",
+            pointBackgroundColor: "rgb(255, 99, 132)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgb(255, 99, 132)",
+          },
+          {
+            label: "Major accident",
+            data: [28, 48, 40, 19, 96, 27, 100],
+            fill: true,
+            backgroundColor: "rgba(54, 162, 235, 0.2)",
+            borderColor: "rgb(54, 162, 235)",
+            pointBackgroundColor: "rgb(54, 162, 235)",
+            pointBorderColor: "#fff",
+            pointHoverBackgroundColor: "#fff",
+            pointHoverBorderColor: "rgb(54, 162, 235)",
+          },
+        ],
+      };
+
+      const configLineChart = {
+        type: "radar",
+        data: data,
+        options: {
+          elements: {
+            line: {
+              borderWidth: 3,
+            },
+          },
+        },
+      };
+
+      var chartLine = new Chart(
+        document.getElementById("chartLine"),
+        configLineChart
+      );
+    </script>
+    <!-- Chart pie -->
+    <script>
+      const dataPie = {
+        labels: ["Mumbai", "Pune", "Nagpur"],
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: [300, 50, 100],
+            backgroundColor: [
+              "rgb(133, 105, 241)",
+              "rgb(164, 101, 241)",
+              "rgb(101, 143, 241)",
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      };
+
+      const configPie = {
+        type: "pie",
+        data: dataPie,
+        options: {},
+      };
+
+      var chartBar = new Chart(document.getElementById("chartPie"), configPie);
+    </script>
+    <script>
+      const data2 = {
+        labels: ["Uttar Pradesh", "Maharashtra", "Tamil Nadu"],
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: [300, 50, 100],
+            backgroundColor: [
+              "rgb(255, 99, 132)",
+              "rgb(255, 180, 193)",
+              "rgb(219, 112, 147)",
+            ],
+            hoverOffset: 4,
+          },
+        ],
+      };
+
+      const config = {
+        type: "doughnut",
+        data: data2,
+      };
+
+      var bar3 = new Chart(document.getElementById("bar3"), config);
+    </script>
+    <script>
+      fetch("/today_accident_count")
+        .then((obj) => obj.json())
+        .then((res) => {
+          document.getElementById("total_accident_count").innerHTML =
+            res.today_accident;
+          const labels = ["accident", "rescued"];
+          const data_accident = {
+            labels: labels,
+            datasets: [
+              {
+                label: "My First Dataset",
+                data: [res.today_accident, 1],
+                backgroundColor: [
+                  "rgba(255, 99, 132, 0.2)",
+                  "rgba(101, 143, 241, 0.2)",
+                  "rgba(255, 205, 86, 0.2)",
+                  "rgba(75, 192, 192, 0.2)",
+                  "rgba(54, 162, 235, 0.2)",
+                  "rgba(153, 102, 255, 0.2)",
+                  "rgba(201, 203, 207, 0.2)",
+                ],
+                borderColor: [
+                  "rgb(255, 99, 132)",
+                  "rgb(101, 143, 241)",
+                  "rgb(255, 205, 86)",
+                  "rgb(75, 192, 192)",
+                  "rgb(54, 162, 235)",
+                  "rgb(153, 102, 255)",
+                  "rgb(201, 203, 207)",
+                ],
+                borderWidth: 1,
+              },
+            ],
+          };
+          const config_accident = {
+            type: "bar",
+            data: data_accident,
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true,
+                },
+              },
+            },
+          };
+          var acccient_data = new Chart(
+            document.getElementById("today_accident"),
+            config_accident
+          );
+        });
+    </script>
+    <script>
+      const data4 = {
+        labels: ["Red", "Green", "Yellow", "Grey", "Blue"],
+        datasets: [
+          {
+            label: "My First Dataset",
+            data: [11, 16, 7, 3, 14],
+            backgroundColor: [
+              "rgb(255, 99, 132)",
+              "rgb(75, 192, 192)",
+              "rgb(255, 205, 86)",
+              "rgb(201, 203, 207)",
+              "rgb(54, 162, 235)",
+            ],
+          },
+        ],
+      };
+      const config4 = {
+        type: "doughnut",
+        data: data4,
+        options: {},
+      };
+      var bar4 = new Chart(document.getElementById("bar4"), config4);
+    </script>
+    <script>
+      fetch("/accident_count")
+        .then((response) => response.json())
+        .then((json) => {
+          if (json.hello >= 0) {
+            count = json.hello;
+            document.getElementById("accident").innerText = json.hello;
+            // alert(json.hello)
+          }
+        });
+      window.setInterval(my, 4000);
+      function my() {
+        fetch("/accident_count")
+          .then((response) => response.json())
+          .then((json) => {
+            if (json.hello > count) {
+              count = json.hello;
+              console.log(count);
+
+              document.getElementById("accident").innerText = json.hello;
+              Swal.fire("Accident Occur");
+              // alert(json.hello)
+            }
+          });
+      }
+    </script>
+    <script>
+      var nav_img_count = 1;
+      nav_img = () => {
+        if (nav_img_count) {
+          document.getElementById("nav_bar").className = " ";
+          nav_img_count = 0;
+        } else {
+          document.getElementById("nav_bar").className = "hidden md:block ";
+          nav_img_count = 1;
+        }
+      };
+    </script>
+
+    {% endblock %}
+  </body>
+</html>

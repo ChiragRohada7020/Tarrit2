@@ -76,12 +76,11 @@
         <!-- <a class="text-gray-800 font-semibold text-3xl leading-4 no-underline page-scroll" href="index.html">Pavo</a> -->
 
         <!-- Image Logo -->
-        <a
+        <div
           class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline"
-          href="index.html"
         >
-          <img src="images/logo.svg" alt="alternative" class="h-8" />
-        </a>
+          <h1 class="">Ta<span class="text-green-400">arit</span></h1>
+        </div>
 
         <button
           class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400"
@@ -98,7 +97,7 @@
           id="navbarsExampleDefault"
         >
           <ul
-            class="pl-0 mt-3 mb-2 ml-auto flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row"
+            class="pl-0 text-xl gap-5 items-center mt-3 mb-2 ml-auto flex flex-col list-none lg:mt-0 lg:mb-0 lg:flex-row"
           >
             <li>
               <a class="nav-link page-scroll active" href="#header"
@@ -175,8 +174,8 @@
         <div class="mb-16 lg:mt-32 xl:mt-40 xl:mr-12">
           <h1 class="h1-large text-purple-700 mb-5">Taarit</h1>
           <p class="p-large mb-8">
-            Start getting things done together with your team based on Pavo's
-            revolutionary team management features
+            Taarit is an ultimate rescue system that will help and rescue
+            drivers in all possible scenarios.
           </p>
           <a class="btn-solid-lg" href="{{ url_for('user.user_index') }}"
             >Add Vehicle</a
@@ -184,13 +183,6 @@
           <a class="btn-solid-lg secondary" href="{{ url_for('sign_up') }}"
             >Sign Up</a
           >
-        </div>
-        <div class="xl:text-right">
-          <img
-            class="inline"
-            src="images/header-smartphone.png"
-            alt="alternative"
-          />
         </div>
       </div>
       <!-- end of container -->
@@ -202,11 +194,13 @@
     <div class="pt-4 pb-14 text-center">
       <div class="container px-4 sm:px-8 xl:px-4">
         <p
-          class="mb-4 text-gray-800 text-3xl leading-10 lg:max-w-5xl lg:mx-auto"
+          class="mb-4 text-gray-800 text-2xl leading-10 lg:max-w-5xl lg:mx-auto"
         >
-          Team management mobile apps don’t get better than Pavo. It’s probably
-          the best app in the world for this purpose. Don’t hesitate to give it
-          a try today and you will fall in love with it
+          Taarit is a “full-stack rescue system” venture which addresses
+          everything from software and hardware to telephony systems, ambulance
+          drivers and paramedics. In addition to ensuring a seamless end-to-end
+          emergency medical service network within golden hour, we also claim to
+          help drivers in car breakdown and other all possible circumstances.
         </p>
       </div>
       <!-- end of container -->
@@ -224,8 +218,8 @@
           <div class="card-body">
             <h5 class="card-title">Timely Medical Help</h5>
             <p class="mb-4">
-              We Provide Medical Assistance Within Golden Hour To The Accident
-              Victim
+              To provide medical assistance to the accident victim within golden
+              hour of the trauma.
             </p>
           </div>
         </div>
@@ -237,10 +231,11 @@
             <i class="fas fa-shield-alt"></i>
           </div>
           <div class="card-body">
-            <h5 class="card-title">Accident Detection</h5>
+            <h5 class="card-title">Driver assistance</h5>
             <p class="mb-4">
-              We Have Deployed An Accelerometer Sensor Which Detects The
-              Frequency I.E: The Vibration That Takes Place While Hitting
+              To help drivers in case of car break down, providing voice
+              assistance while driving in case of any abnormal behaviour by
+              other cars,etc.
             </p>
           </div>
         </div>
@@ -267,10 +262,9 @@
             <i class="fas fa-map-marker-alt"></i>
           </div>
           <div class="card-body">
-            <h5 class="card-title">Location Tracking</h5>
+            <h5 class="card-title">Region Wise Accident Analysis</h5>
             <p class="mb-4">
-              We Provide The Live Location Of The Accident Victim To The Control
-              Room
+              We provide statistical data of the accident per region.
             </p>
           </div>
         </div>
@@ -284,8 +278,8 @@
           <div class="card-body">
             <h5 class="card-title">Effective Emergency Notification</h5>
             <p class="mb-4">
-              No Matter What Your Emergency Contacts Are Doing, Device Will
-              Start A Loud Alarm Which Will Call Their Attention
+              In case of an accident, the Emergency contacts will receive a call
+              & message comprising of the live location of the victim.
             </p>
           </div>
         </div>
@@ -313,15 +307,15 @@
       <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
         <div class="lg:col-span-5">
           <div class="mb-16 lg:mb-0 xl:mt-16">
-            <h2 class="mb-6">Results driven ground breaking technology</h2>
+            <h2 class="mb-6">Your Life is our Priority</h2>
             <p class="mb-4">
-              Based on our team's extensive experience in developing line of
-              business applications and constructive customer feedback we
-              reached a new level of revenue.
+              We intent to provide medical help to the victim within golden hour
+              of the trauma, to increase the chances of survival and to reduce
+              the risk of severity .
             </p>
             <p class="mb-4">
-              We enjoy helping small and medium sized tech businesses take a
-              shot at established Fortune 500 companies
+              We hope that Taarit will not let anyone cease to exit because of
+              untimely medical assistance.
             </p>
           </div>
         </div>
@@ -354,19 +348,27 @@
         <!-- end of col -->
         <div class="lg:col-span-5">
           <div class="xl:mt-12">
-            <h2 class="mb-6">Instant results for the marketing department</h2>
+            <h2 class="mb-6">Control Room per Region</h2>
             <ul class="list mb-7 space-y-2">
               <li class="flex">
                 <i class="fas fa-chevron-right"></i>
-                <div>Features that will help you and your marketers</div>
+                <div>
+                  Nearest control room will snag the location of the accident.
+                </div>
               </li>
               <li class="flex">
                 <i class="fas fa-chevron-right"></i>
-                <div>Smooth learning curve due to the knowledge base</div>
+                <div>
+                  Control room will then lead the location to the nearest
+                  hospital & police station.
+                </div>
               </li>
               <li class="flex">
                 <i class="fas fa-chevron-right"></i>
-                <div>Ready out-of-the-box with minor setup settings</div>
+                <div>
+                  Control Room will also forward the location to the nearest
+                  ambulance in that case.
+                </div>
               </li>
             </ul>
             <a
@@ -383,88 +385,24 @@
     </div>
     <!-- end of details 2 -->
 
-    <!-- Details Lightbox -->
-    <!-- Lightbox -->
-    <div id="details-lightbox" class="lightbox-basic zoom-anim-dialog mfp-hide">
-      <div class="lg:grid lg:grid-cols-12 lg:gap-x-8">
-        <button title="Close (Esc)" type="button" class="mfp-close x-button">
-          ×
-        </button>
-        <div class="lg:col-span-7">
-          <div class="mb-12 text-center lg:m-0 lg:text-left xl:mr-6">
-            <img
-              src="{{url_for('static',filename='img/empl.png')}}"
-              alt=""
-              width=""
-            />
-          </div>
-        </div>
-        <!-- end of col -->
-        <div class="lg:col-span-4">
-          <h3 class="mb-2">Goals Setting</h3>
-          <hr class="w-11 h-0.5 mt-0.5 mb-4 ml-0 border-none bg-indigo-600" />
-          <p>
-            The app can easily help you track your personal development
-            evolution if you take the time to set it up.
-          </p>
-          <h4 class="mt-7 mb-2.5">User Feedback</h4>
-          <p class="mb-4">
-            This is a great app which can help you save time and make your live
-            easier. And it will help improve your productivity.
-          </p>
-          <ul class="list mb-6 space-y-2">
-            <li class="flex">
-              <i class="fas fa-chevron-right"></i>
-              <div>Splash screen panel</div>
-            </li>
-            <li class="flex">
-              <i class="fas fa-chevron-right"></i>
-              <div>Statistics graph report</div>
-            </li>
-            <li class="flex">
-              <i class="fas fa-chevron-right"></i>
-              <div>Events calendar layout</div>
-            </li>
-            <li class="flex">
-              <i class="fas fa-chevron-right"></i>
-              <div>Location details screen</div>
-            </li>
-            <li class="flex">
-              <i class="fas fa-chevron-right"></i>
-              <div>Onboarding steps interface</div>
-            </li>
-          </ul>
-          <a class="btn-solid-reg mfp-close page-scroll" href="#download"
-            >Download</a
-          >
-          <button class="btn-outline-reg mfp-close as-button" type="button">
-            Back
-          </button>
-        </div>
-        <!-- end of col -->
-      </div>
-      <!-- end of row -->
-    </div>
     <!-- end of lightbox-basic -->
     <!-- end of lightbox -->
     <!-- end of details lightbox -->
 
     <!-- Details 3 -->
-    <div class="pt-16 pb-12">
+    <div id="details-lightbox" class="pt-16 pb-12">
       <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
         <div class="lg:col-span-5">
           <div class="mb-16 lg:mb-0 xl:mt-16">
-            <h2 class="mb-6">
-              Platform integration and life time free updates
-            </h2>
+            <h2 class="mb-6">Statistical Data for reviewing.</h2>
             <p class="mb-4">
-              Get a glimpse of what this app can do for your marketing
-              automation and understand why current users are so excited when
-              using Pavo together with their teams.
+              For prevention purpose, we provide statistical data of the
+              accident per region. This data comprises of pie chart, bar
+              graph,etc.
             </p>
             <p class="mb-4">
-              We will promptly answer any questions and honor your requests
-              based on the service level agreement
+              This data will help the authorities to analyze and control the
+              accidents taking place in a particular region.
             </p>
           </div>
         </div>
@@ -478,6 +416,10 @@
             />
           </div>
         </div>
+<div>
+        <button class="btn-outline-reg mfp-close as-button" type="button">
+          <div class="">Back</div>
+        </button>
         <!-- end of col -->
       </div>
       <!-- end of container -->
@@ -490,24 +432,24 @@
         <!-- Counter -->
         <div id="counter">
           <div class="cell">
-            <div class="counter-value number-count" data-count="231">1</div>
-            <p class="counter-info">Happy Users</p>
+            <div class="counter-value number-count" data-count="256">1</div>
+            <p class="counter-info">Total accidents</p>
           </div>
           <div class="cell">
-            <div class="counter-value number-count" data-count="385">1</div>
-            <p class="counter-info">Issues Solved</p>
+            <div class="counter-value number-count" data-count="224">1</div>
+            <p class="counter-info">Rescued on time</p>
           </div>
           <div class="cell">
             <div class="counter-value number-count" data-count="159">1</div>
-            <p class="counter-info">Good Reviews</p>
+            <p class="counter-info">Connected control rooms</p>
           </div>
           <div class="cell">
             <div class="counter-value number-count" data-count="127">1</div>
-            <p class="counter-info">Case Studies</p>
+            <p class="counter-info">Connected Hospitals</p>
           </div>
           <div class="cell">
-            <div class="counter-value number-count" data-count="211">1</div>
-            <p class="counter-info">Orders Received</p>
+            <div class="counter-value number-count" data-count="2341">1</div>
+            <p class="counter-info">Connected Users</p>
           </div>
         </div>
         <!-- end of counter -->
@@ -520,9 +462,7 @@
     <!-- Testimonials -->
     <div class="slider-1 py-32 bg-gray">
       <div class="container px-4 sm:px-8">
-        <h2 class="mb-12 text-center lg:max-w-xl lg:mx-auto">
-          What do users think about Pavo
-        </h2>
+        <h2 class="mb-12 text-center lg:max-w-xl lg:mx-auto">Team Taarit</h2>
 
         <!-- Card Slider -->
         <div class="slider-container">
@@ -538,10 +478,9 @@
                   />
                   <div class="card-body">
                     <p class="italic mb-3">
-                      It's been so fun to work with Pavo, I've managed to
-                      integrate it properly into my business flow and it's great
+                      Btech Third Year, Information Technology student
                     </p>
-                    <p class="testimonial-author">Jude Thorn - Designer</p>
+                    <p class="testimonial-author">Divya Pimple</p>
                   </div>
                 </div>
               </div>
@@ -558,11 +497,9 @@
                   />
                   <div class="card-body">
                     <p class="italic mb-3">
-                      We were so focused on launching as many campaigns as
-                      possible that we've forgotten to target our loyal
-                      customers
+                      Btech Third Year, Information Technology student
                     </p>
-                    <p class="testimonial-author">Roy Smith - Developer</p>
+                    <p class="testimonial-author">Chirag Rohada</p>
                   </div>
                 </div>
               </div>
@@ -579,11 +516,9 @@
                   />
                   <div class="card-body">
                     <p class="italic mb-3">
-                      I've been searching for a tool like Pavo for so long. I
-                      love the reports it generates and the amazing high
-                      accuracy
+                      Btech Third Year, Information Technology student
                     </p>
-                    <p class="testimonial-author">Marsha Singer - Marketer</p>
+                    <p class="testimonial-author">Aarya Kansara</p>
                   </div>
                 </div>
               </div>
@@ -600,10 +535,9 @@
                   />
                   <div class="card-body">
                     <p class="italic mb-3">
-                      We've been waiting for a powerful piece of software that
-                      can help businesses manage their marketing projects
+                      Btech Third Year, Information Technology student
                     </p>
-                    <p class="testimonial-author">Tim Shaw - Designer</p>
+                    <p class="testimonial-author">Hem Vyas</p>
                   </div>
                 </div>
               </div>
@@ -611,42 +545,7 @@
               <!-- end of slide -->
 
               <!-- Slide -->
-              <div class="swiper-slide">
-                <div class="card">
-                  <img
-                    class="card-image"
-                    src="images/testimonial-5.jpg"
-                    alt="alternative"
-                  />
-                  <div class="card-body">
-                    <p class="italic mb-3">
-                      Searching for a great prototyping and layout design app
-                      was difficult but thankfully I found app suite quickly
-                    </p>
-                    <p class="testimonial-author">Lindsay Spice - Marketer</p>
-                  </div>
-                </div>
-              </div>
-              <!-- end of swiper-slide -->
-              <!-- end of slide -->
 
-              <!-- Slide -->
-              <div class="swiper-slide">
-                <div class="card">
-                  <img
-                    class="card-image"
-                    src="images/testimonial-6.jpg"
-                    alt="alternative"
-                  />
-                  <div class="card-body">
-                    <p class="italic mb-3">
-                      The app support team is amazing. They've helped me with
-                      some issues and I am so grateful to the entire team
-                    </p>
-                    <p class="testimonial-author">Ann Blake - Developer</p>
-                  </div>
-                </div>
-              </div>
               <!-- end of swiper-slide -->
               <!-- end of slide -->
             </div>
@@ -685,7 +584,7 @@
           <div class="card-body">
             <div class="card-title">STANDARD</div>
             <div class="price">
-              <span class="currency">$</span><span class="value">29</span>
+              <span class="currency">$</span><span class="value">5</span>
             </div>
             <div class="frequency">monthly</div>
             <p>
@@ -722,7 +621,7 @@
           <div class="card-body">
             <div class="card-title">ADVANCED</div>
             <div class="price">
-              <span class="currency">$</span><span class="value">39</span>
+              <span class="currency">$</span><span class="value">8</span>
             </div>
             <div class="frequency">monthly</div>
             <p>This is a more advanced package suited for medium companies</p>
@@ -757,7 +656,7 @@
           <div class="card-body">
             <div class="card-title">COMPLETE</div>
             <div class="price">
-              <span class="currency">$</span><span class="value">49</span>
+              <span class="currency">$</span><span class="value">10</span>
             </div>
             <div class="frequency">monthly</div>
             <p>
@@ -795,39 +694,16 @@
     <!-- end of pricing -->
 
     <!-- Conclusion -->
-    <div id="download" class="basic-5">
-      <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-2">
-        <div class="mb-16 lg:mb-0">
-          <img src="images/conclusion-smartphone.png" alt="alternative" />
-        </div>
-        <div class="lg:mt-24 xl:mt-44 xl:ml-12">
-          <p class="mb-9 text-gray-800 text-3xl leading-10">
-            Team management mobile applications don’t get much better than Pavo.
-            Download it today
-          </p>
-          <a class="btn-solid-lg" href="#your-link"
-            ><i class="fab fa-apple"></i>Download</a
-          >
-          <a class="btn-solid-lg secondary" href="#your-link"
-            ><i class="fab fa-google-play"></i>Download</a
-          >
-        </div>
-      </div>
-      <!-- end of container -->
-    </div>
-    <!-- end of basic-5 -->
-    <!-- end of conclusion -->
 
     <!-- Footer -->
     <div class="footer">
       <div class="container px-4 sm:px-8">
         <h4 class="mb-8 lg:max-w-3xl lg:mx-auto">
-          Pavo is a mobile application for marketing automation and you can
-          reach the team at
+          Taarit is a rescue system
           <a
             class="text-indigo-600 hover:text-gray-500"
             href="mailto:email@domain.com"
-            >email@domain.com</a
+            >kjseit@gmail.com</a
           >
         </h4>
         <div class="social-container">

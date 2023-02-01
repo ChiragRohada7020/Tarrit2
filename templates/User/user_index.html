@@ -1,5 +1,5 @@
 {% extends "index.html" %}
-<div>
+<div class="bg-blue-50">
   {% block nav %}
   <nav class="navbar fixed-top">
     <div
@@ -9,12 +9,11 @@
       <!-- <a class="text-gray-800 font-semibold text-3xl leading-4 no-underline page-scroll" href="index.html">Pavo</a> -->
 
       <!-- Image Logo -->
-      <a
+      <div
         class="inline-block mr-4 py-0.5 text-xl whitespace-nowrap hover:no-underline focus:no-underline"
-        href="index.html"
       >
-        <img src="images/logo.svg" alt="alternative" class="h-8" />
-      </a>
+        <h1 class="">Ta<span class="text-green-400">arit</span></h1>
+      </div>
 
       <button
         class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400"
@@ -105,27 +104,27 @@
     <div class="mt-0" id="bt1">
       <div style="padding-top: 90px">
         <div class="flex flex-col space-x-2 justify-center items-center">
-          <div>
-            <button
-              onclick="add_vehicle()"
-              type="button"
-              class="mt-20 inline-block px-6 w-80 py-2.5 h-20 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
-            >
-              Add Vehicle
-            </button>
-          </div>
+          <img
+            src="{{url_for('static',filename='img/add-friend.png')}}"
+            alt=""
+            width=" 200px"
+          />
         </div>
       </div>
     </div>
     <div class="" id="data">
-      <div class="mt-20 mb-10 md:px-20">
+      <div class="mt-10 mb-10 md:px-20">
         <div class="flex flex-col space-x-2 justify-center items-center">
           <div>
-            <img
-              src="{{url_for('static',filename='img/add-friend.png')}}"
-              alt=""
-              width=" 200px"
-            />
+            <div>
+              <button
+                onclick="add_vehicle()"
+                type="button"
+                class="mb-10 inline-block px-6 w-80 py-2.5 h-20 bg-green-500 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-green-600 hover:shadow-lg focus:bg-green-600 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-green-700 active:shadow-lg transition duration-150 ease-in-out"
+              >
+                Add Vehicle
+              </button>
+            </div>
           </div>
         </div>
         <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
@@ -192,7 +191,7 @@
           <div>
             <label
               for="first_name"
-              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              class="block mb-2 text-sm font-medium text-black dark:text-gray-300"
               >First name</label
             >
             <input
@@ -207,7 +206,7 @@
           <div>
             <label
               for="last_name"
-              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              class="block mb-2 text-sm font-medium text-black dark:text-gray-300"
               >Last name</label
             >
             <input
@@ -237,7 +236,7 @@
           <div>
             <label
               for="phone"
-              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              class="block mb-2 text-sm font-medium text-black dark:text-gray-300"
               >Phone number</label
             >
             <input
@@ -253,7 +252,7 @@
           <div>
             <label
               for="website"
-              class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+              class="block mb-2 text-sm font-medium text-black dark:text-gray-300"
               >Vehicle Number</label
             >
             <input
@@ -269,7 +268,7 @@
         <div class="mb-6">
           <label
             for="address"
-            class="block mb-2 text-sm font-medium text-white dark:text-gray-300"
+            class="block mb-2 text-sm font-medium text-black dark:text-gray-300"
             >Address</label
           >
           <input
@@ -277,7 +276,7 @@
             type="text"
             id="email"
             class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-            placeholder="john.doe@gmail.com"
+            placeholder="address"
             required=""
           />
         </div>
@@ -304,7 +303,7 @@
           </div>
           <label
             for="remember"
-            class="ml-2 text-sm font-medium text-white dark:text-gray-400"
+            class="ml-2 text-sm font-medium text-black dark:text-gray-400"
             >I agree with the
             <a href="#" class="text-blue-600 hover:underline dark:text-blue-500"
               >terms and conditions</a

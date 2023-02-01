@@ -27,7 +27,7 @@
           >
             Login
           </h1>
-          <form action="/login" method="POST">
+          <form action="{{ url_for('index.login') }}" method="POST">
             <input
               type="email"
               class="block border border-grey-light w-full p-3 rounded mb-4"

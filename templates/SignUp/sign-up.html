@@ -19,7 +19,7 @@
       >
         <div class="bg-white px-6 py-8 rounded shadow-md text-black w-full">
           <h1 class="mb-8 text-3xl text-center font-semibold">Sign up</h1>
-          <form action="/sign_up" method="post">
+          <form action="{{ url_for('sign_up') }}" method="post">
             <input
               type="text"
               class="block border border-grey-light w-full p-3 rounded mb-4"
@@ -74,7 +74,7 @@
           Already have an account?
           <a
             class="no-underline border-b border-blue text-blue-400"
-            href="login"
+            href="{{ url_for('index.login') }}"
           >
             Log in
           </a>

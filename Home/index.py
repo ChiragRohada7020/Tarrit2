@@ -60,6 +60,8 @@ def Home():
   
 
 
+
+
 @index.route("/login",methods = ['POST', 'GET'])
 def login():
     
@@ -84,7 +86,7 @@ def login():
             error="invalid credential"
             return render_template('SignUp/login.html',error=error)
       except:
-          return render_template('error.html')
+          return render_template('SignUp/login.html',error=error)
     else:
        return render_template('SignUp/login.html',error=error)
 

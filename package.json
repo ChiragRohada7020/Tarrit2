@@ -1,5 +1,9 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.2.4"
+  },
+  "dependencies": {
+    "chart.js": "^4.2.0",
+    "sweetalert2": "^11.7.1"
   }
 }
