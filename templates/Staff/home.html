@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/Tailwindcss/output.css')}}"
+    />
+  </head>
+  <body class="bg-gray-50">
+    <nav class="fixed top-1">
+      <div class="flex flex-row gap-x-60">
+        <div class="p-4 pl-4">
+          <img
+            src="{{url_for('static',filename='Staff/images/bar.png')}}"
+            alt=""
+            class="w-10"
+          />
+        </div>
+        <div class="p-4 pr-4">
+          <img
+            src="{{url_for('static',filename='Staff/images/profile.png')}}"
+            alt=""
+            class="w-10"
+          />
+        </div>
+      </div>
+    </nav>
+    <main class="m-10 mt-40">
+      <div class="flex justify-start">
+        <h1 class="text-xl font-bold">Welcome back !</h1>
+      </div>
+      <div class="flex flex-nowrap flex-row overflow-scroll gap-10">
+        <div class="bg-yellow-400 h-60 w-96 mt-20 border rounded-md">
+          <h1>Working At Home</h1>
+        </div>
+        <div
+          class="container bg-yellow-400 h-60 p-20 max-w-4xl mt-20 border rounded-md"
+        >
+          Home Coming Town
+        </div>
+      </div>
+    </main>
+    <footer
+      class="fixed border border-t-1 border-b-0 pt-2 w-full bottom-0 pb-5 bg-white"
+    >
+      <div class="container bg-white">
+        <div class="flex justify-center gap-20">
+          <img
+            src="{{url_for('static',filename='Staff/images/home.png')}}"
+            alt=""
+            class="w-5 h-5"
+          />
+          <img
+            onclick=" nav_img()"
+            src="{{url_for('static',filename='Staff/images/support.png')}}"
+            alt=""
+            class="w-5 h-5"
+          />
+          <img
+            src="{{url_for('static',filename='Staff/images/message.png')}}"
+            alt=""
+            class="w-5 h-5"
+          />
+        </div>
+      </div>
+    </footer>
+    <!-- <script>
+      var nav_img_count = 1;
+      nav_img = () => {
+        if (nav_img_count) {
+          document.getElementById("nav_bar").className = " ";
+          nav_img_count = 0;
+        } else {
+          document.getElementById("nav_bar").className = "hidden md:block ";
+          nav_img_count = 1;
+        }
+      };
+    </script> -->
+  </body>
+</html>

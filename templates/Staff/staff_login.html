@@ -8,9 +8,13 @@
       href="https://unpkg.com/tailwindcss@0.3.0/dist/tailwind.min.css"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="{{url_for('static',filename='dist/Tailwindcss/output.css')}}"
+    />
   </head>
-  <body style="background: #edf2f7">
-    <div class="bg-grey-lighter min-h-screen flex flex-col">
+  <body>
+    <!-- <div class="bg-grey-lighter min-h-screen flex flex-col">
       <div
         class="container max-w-sm mx-auto flex-1 flex flex-col items-center justify-center px-2"
       >
@@ -32,8 +36,7 @@
               placeholder="Password"
               required
             />
-            <input type="hidden" value="0" name="lat" id="lat" />
-            <input type="hidden" value="0" name="log" id="log" />
+            
 
             <button
               type="submit"
@@ -48,7 +51,103 @@
           <h4 class="text-red">{{error}}</h4>
         </div>
       </div>
+    </div> -->
+
+    <!-- starting of new mobile app -->
+    <!-- component -->
+    <!-- This is an example component -->
+    
+    <div class="h-screen w-full">
+      <div class="bg-gray-800 h-screen mx-auto max-w-md">
+        <form action="/staff_login" method="post" id="form">
+        <div class="p-12">
+          <p class="text-5xl pt-10 text-yellow-500 font-bold">
+            Welcome <br />
+            Back
+          </p>
+          <p class="text-xl py-3 text-gray-400 font-semibold">
+            Sign in to continue
+          </p>
+        </div>
+        
+          <input type="hidden" value="0" name="lat" id="lat" />
+            <input type="hidden" value="0" name="log" id="log" />
+          <div class="mx-12 p-3 rounded-xl shadow-sm bg-gray-900">
+            <div class="p-3 mx-6 border-b border-gray-500">
+              <input
+                name="email"
+                placeholder="email"
+                class="bg-transparent text-yellow-500 w-full focus:outline-none focus:rang"
+                type="email"
+              />
+            </div>
+
+            <div class="p-3 mx-6 flex border-b border-gray-500">
+              <input
+                placeholder="Password"
+                class="bg-transparent text-yellow-500 focus:outline-none focus:rang w-full"
+                type="password"
+                name="password"
+              />
+              
+            </div>
+          </div>
+        
+        <div class="mx-12 p-3 justify-between flex">
+          <div class="flex">
+            <div
+              class="relative inline-block w-12 mr-2 align-middle select-none transition duration-200 ease-in"
+            >
+              <input
+                type="checkbox"
+                name="toggle"
+                id="toggle"
+                class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-gray-800 border-4 appearance-none cursor-pointer"
+              />
+              <label
+                for="toggle"
+                class="toggle-label block overflow-hidden h-6 rounded-full bg-yellow-500 cursor-pointer"
+              ></label>
+            </div>
+            <label for="toggle" class="text-xs text-gray-300 mt-1"
+              >remeber me</label
+            >
+          </div>
+          
+          <div class="bg mt-1 text-xs text-gray-300">
+            <a href="">forget password?</a>
+          </div>
+        </div>
+        <div class="w-full p-12">
+          <div class="text-grey-dark px-5 pb-5">
+            <h4 class="text-red">{{error}}</h4>
+          </div>
+          <button
+            class="bg-yellow-500 p-3 rounded-3xl w-full h-full hover:bg-yellow-600"
+          >
+            Login
+          </button>
+          <p class="mx-auto text-center mt-3 text-gray-400">
+            don't have an account?
+            <a href="" class="text-md font-semibold">Sign up</a>
+          </p>
+        </div>
+      </div>
+    </form>
     </div>
+
+    <style>
+      .toggle-checkbox:checked {
+        @apply: right-0 border-green-400;
+        right: 0;
+        border-color: rgb(241, 131, 4);
+      }
+      .toggle-checkbox:checked + .toggle-label {
+        @apply: bg-green-400;
+        background-color: rgb(241, 131, 4);
+      }
+    </style>
+
     <script>
       var x = document.getElementById("lat");
       var y = document.getElementById("log");

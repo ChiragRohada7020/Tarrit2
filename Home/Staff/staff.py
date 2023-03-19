@@ -106,12 +106,20 @@ def staff_index():
             mycol = mydb["accident"]
             x=mycol.find({'postcode':postcode,'critical':1})
             y=mycol.find({'postcode':postcode,'critical':0,'staff_email':session['staff_id']})
-            return render_template('Staff/inbox2.html',accident=x,myloc=postcode,to_rescued=y)
+            return render_template('Staff/index.html',accident=x,myloc=postcode,to_rescued=y)
         else:
             return redirect(url_for('staff.staff_login'))
 
     except:
          return 'error occur n'
+
+@staff.route("/staff_mobile")
+def staff_mobile():
+  return render_template('Staff/inbox2.html',lat='19.0317365',log='72.8643442')
+
+@staff.route("/staff_home")
+def home():
+  return render_template('Staff/home.html',lat='19.0317365',log='72.8643442')
 
 
 #--------------------------------------------------------ADMIN LOGOUT-------------------------------------------------------

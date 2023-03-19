@@ -346,6 +346,9 @@ def user_data(id):
 
 
 
+
+
+
 @app.route("/hospital_sign_up",methods = ['POST', 'GET'])
 def hospital_sign_up():
     global n

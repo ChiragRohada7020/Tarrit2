@@ -370,6 +370,9 @@ def today_accident_count():
 
 
 
+
+
+
 @admin.route("/admin_staff_data/<id>")
 def user_data(id):
   mycol = mydb['accident']
