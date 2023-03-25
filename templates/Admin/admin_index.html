@@ -469,7 +469,7 @@
       var bar4 = new Chart(document.getElementById("bar4"), config4);
     </script>
     <script>
-      fetch("/accident_count")
+      fetch("https://taarit2.onrender.com/accident_count")
         .then((response) => response.json())
         .then((json) => {
           if (json.hello >= 0) {
@@ -480,7 +480,7 @@
         });
       window.setInterval(my, 4000);
       function my() {
-        fetch("/accident_count")
+        fetch("https://taarit2.onrender.com/accident_count")
           .then((response) => response.json())
           .then((json) => {
             if (json.hello > count) {
