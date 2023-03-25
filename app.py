@@ -77,8 +77,8 @@ mail = Mail(app) # instantiate the mail class
 # configuration of mail
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'kjseit.q@gmail.com'
-app.config['MAIL_PASSWORD'] = 'ghkwfpxqlicxlfch'
+app.config['MAIL_USERNAME'] = 'taarit364@gmail.com'
+app.config['MAIL_PASSWORD'] = 'bnneszfcnfhvkibn'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -138,7 +138,7 @@ def sign_up():
       
               msg = Message(
                 'Hello',
-                sender ='kjseit.q@gmail.com',
+                sender ='taarit364@gmail.com',
                 recipients = [user_email]
                )
               msg.html ="""
