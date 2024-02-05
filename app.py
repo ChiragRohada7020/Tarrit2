@@ -77,8 +77,8 @@ mail = Mail(app) # instantiate the mail class
 # configuration of mail
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'taarit364@gmail.com'
-app.config['MAIL_PASSWORD'] = 'bnneszfcnfhvkibn'
+app.config['MAIL_USERNAME'] = 'taarit1313@gmail.com'
+app.config['MAIL_PASSWORD'] = 'lzbz nlfy rsvn ceum'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
