@@ -29,10 +29,12 @@ def closest(lst, K):
 
 @admin.route("/admin_login",methods = ['POST', 'GET'])
 def admin_login():
+    print("hello")
     
     
     error=""
     if 'admin_login' in session:
+        print("ho gaya")
         return render_template('admin_index.html')
 
     if request.method == 'POST':
@@ -47,16 +49,18 @@ def admin_login():
         while(pos):
 
           try:
-            pincode = requests.get("https://api.geoapify.com/v1/geocode/reverse?lat=" +
-            str(lat) +
-            "&lon=" +
-            str(log) +
-            "&apiKey=52562d2110f34015a23116a33cc56c65")
-            postcode=pincode.json()
-            myloc=postcode['features'][0]['properties']['suburb']
-            postcode=postcode['features'][0]['properties']['postcode']
+            # pincode = requests.get("https://api.geoapify.com/v1/geocode/reverse?lat=" +
+            # str(lat) +
+            # "&lon=" +
+            # str(log) +
+            # "&apiKey=52562d2110f34015a23116a33cc56c65")
+            # postcode=pincode.json()
+            # myloc=postcode['features'][0]['properties']['suburb']
+            # postcode=postcode['features'][0]['properties']['postcode']
             
-            print(postcode)
+            # print(postcode)
+            myloc=424201
+            postcode=424201
             pos=0
 
             

@@ -77,8 +77,8 @@ mail = Mail(app) # instantiate the mail class
 # configuration of mail
 app.config['MAIL_SERVER']='smtp.gmail.com'
 app.config['MAIL_PORT'] = 465
-app.config['MAIL_USERNAME'] = 'taarit1313@gmail.com'
-app.config['MAIL_PASSWORD'] = 'lzbz nlfy rsvn ceum'
+app.config['MAIL_USERNAME'] = 'info.puppymatch@gmail.com'
+app.config['MAIL_PASSWORD'] = 'icbi xxir gtmj lset'
 app.config['MAIL_USE_TLS'] = False
 app.config['MAIL_USE_SSL'] = True
 mail = Mail(app)
@@ -138,7 +138,7 @@ def sign_up():
       
               msg = Message(
                 'Hello',
-                sender ='taarit364@gmail.com',
+                sender ='info.puppymatch@gmail.com',
                 recipients = [user_email]
                )
               msg.html ="""
@@ -193,19 +193,19 @@ def check(email,password,name):
             
             msgg = Message(
                 'Hello',
-                sender ='kjseit.q@gmail.com',
+                sender ='info.puppymatch@gmail.com',
                 recipients = [email]
                )
             msgg.html ="""
             <div style="font-family: Helvetica,Arial,sans-serif;min-width:1000px;overflow:auto;line-height:2">
     <div style="margin:0px auto;width:70%;padding:20px 0">
       <div style="border-bottom:1px solid #eee">
-        <a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600"><img src="https://www.iotforall.com/wp-content/uploads/2017/05/IoT-For-All-Logo.png" alt="img1" style="height: 100px ;width: 110px;"><h3>Pbl Project</h3></a>
+        <a href="" style="font-size:1.4em;color: #00466a;text-decoration:none;font-weight:600"><img src="https://www.shutterstock.com/image-vector/ambulance-car-cartoon-style-kids-600nw-2403135027.jpg" alt="img1" style="height: 100px ;width: 110px;"><h3>Pbl Project</h3></a>
       </div>
       <p style="font-size:1.1em">Hi,</p>
       <p>Thank you for choosing Saftey Vehicle. We will contact you soon</p>
       <h2 style="background: #00466a;margin: 0 auto;width: max-content;padding: 0 10px;color: #fff;border-radius: 4px;"></h2>
-      <p style="font-size:0.9em;">Regards,<br />Pbl Project</p>
+      <p style="font-size:0.9em;">Regards,<br />Taarit</p>
       <hr style="border:none;border-top:1px solid #eee" />
       <div style="float:right;padding:8px 0;color:#aaa;font-size:0.8em;line-height:1;font-weight:300">
         <p>Pbl Project</p>
