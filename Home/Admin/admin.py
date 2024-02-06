@@ -59,8 +59,8 @@ def admin_login():
             # postcode=postcode['features'][0]['properties']['postcode']
             
             # print(postcode)
-            myloc=424201
-            postcode=424201
+            myloc=410416
+            postcode=410106
             pos=0
 
             
